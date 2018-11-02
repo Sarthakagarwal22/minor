@@ -1,0 +1,255 @@
+:root {
+  --container-bg-color: #333;
+  --left-bg-color: rgba(223, 39, 39, 0.7);
+  --left-button-hover-color: rgba(161, 11, 11, 0.3);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --right-button-hover-color: rgba(92, 92, 92, 0.3);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+
+html, body {
+  padding:0;
+  margin:0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  z-index: -3;
+}
+
+.split h1 {
+  font-size: 6rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  height: 4.5rem;
+  padding-top: 1.3rem;
+  width: 15rem;
+  text-align: center;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.split.left .button:hover {
+  background-color: var(--left-button-hover-color);
+  border-color: var(--left-button-hover-color);
+  color: white;
+  text-decoration: none;
+}
+
+.split.right .button:hover {
+  background-color: var(--right-button-hover-color);
+  border-color: var(--right-button-hover-color);
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left:0;
+}
+
+.split.left:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--left-bg-color);
+}
+
+.split.left.all_states {
+  left:0;
+  background: url('images/statewise.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.split.right {
+  right:0;
+}
+
+.split.right:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--right-bg-color);
+}
+
+.split.right.one_state {
+  right:0;
+  background: url('images/district.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.split.left, .split.right, .split.right:before, .split.left:before {
+  transition: var(--speed) all ease-in-out;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-left .right:before {
+  z-index: 2;
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .left:before {
+  z-index: 2;
+}
+
+.first{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
+.second{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+}
+
+.graphs{
+  position: relative;
+
+}
+.uncover{
+  transform: translate(0,-100vh);
+  transition: var(--speed) all ease-in-out; 
+}
+
+.grid{
+  display: flex;
+  justify-content: space-around;
+}
+
+.grid_box{
+  border-radius: 12px;
+  display: flex;
+  width: 19%;
+  height: 48vh;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+.grid_box.top{
+  background: #9e0c0cfa;
+  margin-bottom: 5px;
+}
+
+.grid_box.top h2{
+  color: #fff;
+}
+
+.grid_box.bottom{
+  background: #afafaf;
+}
+
+.grid_box:hover{
+  box-shadow: 7px 1px 16px 0px black;
+}
+
+.dataset-button{
+  padding: 20px;
+  font-size: 20px;
+}
+
+@media(max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .button {
+    width: 12rem;
+  }
+}
+
+@media(max-height: 700px) {
+  .button {
+    top: 70%;
+  }
+}
+.row1 .grid_box,.row2 .grid_box,.row3 .grid_box,.row4 .grid_box,.row5 .grid_box,.row6 .grid_box,.row7 .grid_box{
+  width: 18%;
+  height: 13vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.information h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.row1 .grid_box{
+  background: #00796B;
+}
+
+.row2 .grid_box{
+  background: #448AFF;
+} 
+
+.row3 .grid_box{
+  background: #388E3C;
+}
+
+.row4 .grid_box{
+  background: #455A64;
+} 
+
+.row5 .grid_box{
+  background: #795548;
+}
+
+.row6 .grid_box{
+  background: #F57C00;
+}
+
+.row7 .grid_box{
+  background: #bf360c;
+}

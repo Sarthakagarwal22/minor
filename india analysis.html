@@ -1,0 +1,99 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div class="first_screen row">
+	<div class="india_map col-sm-7">
+		<img src="images/india.png" height="700px">
+	</div>
+	<div class="col-sm-5">
+		<div>
+			<h4>States with Highest Literacy Rate</h4>
+			<p>Kerala </p>
+			<p>Kerala </p>
+			<p>Kerala </p>
+			<p>Kerala </p>
+			<p>Kerala </p>
+		</div>
+		<br><br><br><br><br><br>
+		<div>
+			<h4>States with Lowest Literacy Rate</h4>
+			<p>Bihar </p>
+			<p>Kerala </p>
+			<p>Kerala </p>
+			<p>Kerala </p>
+			<p>Kerala </p>
+		</div>
+	</div>
+	
+</div>
+<br><br>
+<img src="images/india bar.png" width="1280px">
+<br>
+
+<div class="graphs">
+	<center><h1><b>Graphs</b></h1></center>
+	<div class="container-fluid grid top">
+		<div class="grid_box top" id="literacy rate.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>Literacy Rate</h2>
+		</div>
+		<div class="grid_box top" id="Percentage pupils enrolled in Govt schools.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>People in Govt Schools</h2>
+		</div>
+		<div class="grid_box top" id="Govt school.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>Government Schools</h2>
+		</div>
+		<div class="grid_box top" id="Percentage pupils enrolled in Private rural schools.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>People in Private rural schools</h2>
+		</div>
+		<div class="grid_box top" id="population density for state.JPG" data-toggle="modal" data-target="#myModal"> 
+			<h2>Population Density</h2>
+		</div>
+	</div>
+	<div class="container-fluid grid bottom">
+		<div class="grid_box bottom" id="total enrollment in school.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>Total Enrollment in Schools</h2>
+		</div>
+		<div class="grid_box bottom" id="Total Rural schools.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>Total Rural Schools</h2>
+		</div>
+		<div class="grid_box bottom" id="total schools.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>Total Schools</h2>
+		</div>
+		<div class="grid_box bottom" id="urban population.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>Urban Population</h2>			
+		</div>
+		<div class="grid_box bottom" id="Percentage pupils enrolled in rural schools.JPG" data-toggle="modal" data-target="#myModal">
+			<h2>People in rural schools</h2>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <img id="modal_image" src="" width="575px">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>  
+	</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+<script type="text/javascript"charset="utf-8">
+$(document).ready(function(){
+	$(".grid_box").on("click",function(){
+		$(".modal-title").html($(this).prop("id").split(".")[0]);
+		$("#modal_image").prop("src", `images/${$(this).prop("id")}`);
+	});
+});
+</script>
